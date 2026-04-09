@@ -1,0 +1,19 @@
+{
+  "type": "socio-technical-ir",
+  "name": "sample-system",
+  "technical": {
+    "name": "sample-system",
+    "commitID": "abcd1234",
+    "microservices": [],
+    "orphans": []
+  },
+  "organizational": {
+    "status": "stub",
+    "note": "Organizational analysis is not populated in M0."
+  },
+  "traceability": {
+    "contractVersion": "m0",
+    "note": "Traceability details are not populated in M0."
+  },
+  "schemaVersion": "m0"
+}
