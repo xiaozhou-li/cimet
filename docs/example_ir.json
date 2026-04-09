@@ -1,0 +1,71 @@
+{
+  "type": "SocioTechnicalMicroserviceSystem",
+  "name": "train-ticket",
+  "technical": {
+    "microservices": [ ... existing IR ... ]
+  },
+  "organizational": {
+    "developers": [
+      {
+        "id": "dev_001",
+        "name": "alice",
+        "aliases": ["alice@x", "alice@users.noreply.github.com"],
+        "roles": {
+          "jack": 0.42,
+          "maven": 0.18,
+          "connector": 0.61,
+          "roleStackingIndex": 0.36
+        }
+      }
+    ],
+    "commits": [
+      {
+        "id": "c123",
+        "author": "dev_001",
+        "timestamp": "2025-02-10T14:11:00Z",
+        "issues": ["issue_88"],
+        "touchedMicroservices": ["ts-order-service", "ts-seat-service"],
+        "touchedFiles": [
+          "/ts-order-service/src/main/java/...",
+          "/ts-seat-service/src/main/java/..."
+        ],
+        "changeSize": {
+          "addedLOC": 40,
+          "deletedLOC": 12
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "issue_88",
+        "type": "pull_request",
+        "participants": ["dev_001", "dev_007"],
+        "linkedCommits": ["c123", "c124"],
+        "linkedMicroservices": ["ts-order-service", "ts-seat-service"]
+      }
+    ],
+    "serviceOwnership": [
+      {
+        "microservice": "ts-order-service",
+        "primaryDevelopers": ["dev_001", "dev_003"],
+        "ownershipConcentration": 0.71,
+        "teamCohesion": 0.63
+      }
+    ],
+    "servicePairRelations": [
+      {
+        "source": "ts-order-service",
+        "target": "ts-seat-service",
+        "organizationalCoupling": 0.58,
+        "sharedDevelopers": ["dev_001", "dev_007"],
+        "switchingScore": 0.66
+      }
+    ]
+  },
+  "traceability": {
+    "developerToCommit": [ ... ],
+    "commitToIssue": [ ... ],
+    "commitToFile": [ ... ],
+    "developerToMicroservice": [ ... ]
+  }
+}

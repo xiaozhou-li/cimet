@@ -1,0 +1,378 @@
+{
+  "type": "SocioTechnicalMicroserviceSystem",
+  "schemaVersion": "1.0.0",
+  "name": "train-ticket",
+  "technical": {
+    "commitID": "c124",
+    "microservices": [
+      {
+        "name": "ts-order-service",
+        "path": "/ts-order-service",
+        "controllers": [],
+        "entities": [],
+        "feignClients": [],
+        "services": [],
+        "repositories": [],
+        "files": []
+      },
+      {
+        "name": "ts-seat-service",
+        "path": "/ts-seat-service",
+        "controllers": [],
+        "entities": [],
+        "feignClients": [],
+        "services": [],
+        "repositories": [],
+        "files": []
+      }
+    ],
+    "orphans": []
+  },
+  "organizational": {
+    "developers": [
+      {
+        "id": "dev_001",
+        "name": "alice",
+        "aliases": [
+          "alice@corp.example",
+          "alice@users.noreply.github.com"
+        ],
+        "roles": {
+          "jack": 0.71,
+          "maven": 0.55,
+          "connector": 0.78,
+          "roleStackingIndex": 0.68,
+          "labels": [
+            "jack",
+            "connector"
+          ]
+        },
+        "roleHistory": [
+          {
+            "windowId": "w_2025Q1",
+            "jack": 0.66,
+            "maven": 0.49,
+            "connector": 0.73,
+            "roleStackingIndex": 0.61,
+            "labels": [
+              "jack",
+              "connector"
+            ]
+          },
+          {
+            "windowId": "w_2025Q2",
+            "jack": 0.71,
+            "maven": 0.55,
+            "connector": 0.78,
+            "roleStackingIndex": 0.68,
+            "labels": [
+              "jack",
+              "connector"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dev_007",
+        "name": "bob",
+        "aliases": [
+          "bob@corp.example"
+        ],
+        "roles": {
+          "jack": 0.34,
+          "maven": 0.82,
+          "connector": 0.27,
+          "roleStackingIndex": 0.38,
+          "labels": [
+            "maven"
+          ]
+        },
+        "roleHistory": [
+          {
+            "windowId": "w_2025Q1",
+            "jack": 0.29,
+            "maven": 0.79,
+            "connector": 0.21,
+            "roleStackingIndex": 0.33,
+            "labels": [
+              "maven"
+            ]
+          },
+          {
+            "windowId": "w_2025Q2",
+            "jack": 0.34,
+            "maven": 0.82,
+            "connector": 0.27,
+            "roleStackingIndex": 0.38,
+            "labels": [
+              "maven"
+            ]
+          }
+        ]
+      }
+    ],
+    "commits": [
+      {
+        "id": "c123",
+        "author": "dev_001",
+        "timestamp": "2025-02-10T14:11:00Z",
+        "issues": [
+          "issue_88"
+        ],
+        "touchedMicroservices": [
+          "ts-order-service",
+          "ts-seat-service"
+        ],
+        "touchedFiles": [
+          "/ts-order-service/src/main/java/com/acme/order/OrderController.java",
+          "/ts-seat-service/src/main/java/com/acme/seat/SeatService.java"
+        ],
+        "changeSize": {
+          "addedLOC": 40,
+          "deletedLOC": 12
+        },
+        "windowIds": [
+          "w_2025Q1"
+        ]
+      },
+      {
+        "id": "c124",
+        "author": "dev_007",
+        "timestamp": "2025-03-04T10:05:00Z",
+        "issues": [
+          "issue_88"
+        ],
+        "touchedMicroservices": [
+          "ts-order-service"
+        ],
+        "touchedFiles": [
+          "/ts-order-service/src/main/java/com/acme/order/OrderService.java"
+        ],
+        "changeSize": {
+          "addedLOC": 22,
+          "deletedLOC": 6
+        },
+        "windowIds": [
+          "w_2025Q1"
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "id": "issue_88",
+        "type": "pull_request",
+        "participants": [
+          "dev_001",
+          "dev_007"
+        ],
+        "linkedCommits": [
+          "c123",
+          "c124"
+        ],
+        "linkedMicroservices": [
+          "ts-order-service",
+          "ts-seat-service"
+        ]
+      }
+    ],
+    "contributorServiceRelations": [
+      {
+        "developerId": "dev_001",
+        "microservice": "ts-order-service",
+        "windowId": "w_2025Q1",
+        "contributionWeight": 0.62,
+        "contributionShare": 0.62,
+        "commitCount": 1,
+        "addedLOC": 25,
+        "deletedLOC": 8,
+        "isPrimaryOwner": true
+      },
+      {
+        "developerId": "dev_007",
+        "microservice": "ts-order-service",
+        "windowId": "w_2025Q1",
+        "contributionWeight": 0.38,
+        "contributionShare": 0.38,
+        "commitCount": 1,
+        "addedLOC": 22,
+        "deletedLOC": 6,
+        "isPrimaryOwner": false
+      },
+      {
+        "developerId": "dev_001",
+        "microservice": "ts-seat-service",
+        "windowId": "w_2025Q1",
+        "contributionWeight": 1.0,
+        "contributionShare": 1.0,
+        "commitCount": 1,
+        "addedLOC": 15,
+        "deletedLOC": 4,
+        "isPrimaryOwner": true
+      }
+    ],
+    "serviceOwnership": [
+      {
+        "microservice": "ts-order-service",
+        "primaryDevelopers": [
+          "dev_001"
+        ],
+        "ownershipConcentration": 0.62,
+        "teamCohesion": 0.64
+      },
+      {
+        "microservice": "ts-seat-service",
+        "primaryDevelopers": [
+          "dev_001"
+        ],
+        "ownershipConcentration": 1.0,
+        "teamCohesion": 0.42
+      }
+    ],
+    "serviceOrganizationalMetrics": [
+      {
+        "microservice": "ts-order-service",
+        "windowId": "w_2025Q1",
+        "ownershipConcentration": 0.62,
+        "ptc": 0.64,
+        "primaryDevelopers": [
+          "dev_001"
+        ],
+        "activeContributors": 2,
+        "metricMetadata": {
+          "ptcFormulaVersion": "v1",
+          "ownershipFormulaVersion": "v1"
+        }
+      },
+      {
+        "microservice": "ts-seat-service",
+        "windowId": "w_2025Q1",
+        "ownershipConcentration": 1.0,
+        "ptc": 0.42,
+        "primaryDevelopers": [
+          "dev_001"
+        ],
+        "activeContributors": 1,
+        "metricMetadata": {
+          "ptcFormulaVersion": "v1",
+          "ownershipFormulaVersion": "v1"
+        }
+      }
+    ],
+    "servicePairRelations": [
+      {
+        "source": "ts-order-service",
+        "target": "ts-seat-service",
+        "windowId": "w_2025Q1",
+        "noc": 0.58,
+        "organizationalCoupling": 0.58,
+        "sharedDevelopers": [
+          "dev_001"
+        ],
+        "switchingScore": 0.66,
+        "overlapScore": 0.5
+      }
+    ],
+    "analysisWindows": [
+      {
+        "id": "w_2025Q1",
+        "mode": "calendar",
+        "start": "2025-01-01T00:00:00Z",
+        "end": "2025-03-31T23:59:59Z",
+        "timezone": "UTC",
+        "aoc": 0.58,
+        "commitCount": 2,
+        "developerCount": 2
+      }
+    ]
+  },
+  "traceability": {
+    "developerToCommit": [
+      {
+        "developerId": "dev_001",
+        "commitId": "c123"
+      },
+      {
+        "developerId": "dev_007",
+        "commitId": "c124"
+      }
+    ],
+    "commitToIssue": [
+      {
+        "commitId": "c123",
+        "issueId": "issue_88"
+      },
+      {
+        "commitId": "c124",
+        "issueId": "issue_88"
+      }
+    ],
+    "commitToFile": [
+      {
+        "commitId": "c123",
+        "file": "/ts-order-service/src/main/java/com/acme/order/OrderController.java"
+      },
+      {
+        "commitId": "c123",
+        "file": "/ts-seat-service/src/main/java/com/acme/seat/SeatService.java"
+      },
+      {
+        "commitId": "c124",
+        "file": "/ts-order-service/src/main/java/com/acme/order/OrderService.java"
+      }
+    ],
+    "developerToMicroservice": [
+      {
+        "developerId": "dev_001",
+        "microservice": "ts-order-service",
+        "windowId": "w_2025Q1"
+      },
+      {
+        "developerId": "dev_001",
+        "microservice": "ts-seat-service",
+        "windowId": "w_2025Q1"
+      },
+      {
+        "developerId": "dev_007",
+        "microservice": "ts-order-service",
+        "windowId": "w_2025Q1"
+      }
+    ],
+    "windowToCommit": [
+      {
+        "windowId": "w_2025Q1",
+        "commitId": "c123"
+      },
+      {
+        "windowId": "w_2025Q1",
+        "commitId": "c124"
+      }
+    ],
+    "windowToService": [
+      {
+        "windowId": "w_2025Q1",
+        "microservice": "ts-order-service"
+      },
+      {
+        "windowId": "w_2025Q1",
+        "microservice": "ts-seat-service"
+      }
+    ]
+  },
+  "metadata": {
+    "repository": "https://github.com/example/train-ticket.git",
+    "analysisMode": "calendar",
+    "windowPolicy": {
+      "mode": "calendar",
+      "bucket": "quarter",
+      "timezone": "UTC"
+    },
+    "generatedAt": "2026-04-09T12:00:00Z",
+    "formulaVersions": {
+      "ptc": "v1",
+      "noc": "v1",
+      "aoc": "v1",
+      "roles": "v1",
+      "rsi": "v1"
+    }
+  }
+}
