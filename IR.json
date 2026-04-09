@@ -1,0 +1,3134 @@
+{
+  "name": "sample-spring-microservices-new",
+  "commitID": "f637eaf6e6c2a9c4d815c76c1ff4ef35dec96d11",
+  "microservices": [
+    {
+      "name": "organization-service",
+      "path": "/organization-service",
+      "controllers": [
+        {
+          "name": "OrganizationController",
+          "path": "/organization-service/src/main/java/pl/piomin/services/organization/controller/OrganizationController.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.organization.controller",
+          "classRole": "CONTROLLER",
+          "annotations": [
+            {
+              "name": "RestController",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "attributes": {}
+            }
+          ],
+          "fields": [
+            {
+              "name": "departmentClient",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "type": "DepartmentClient"
+            },
+            {
+              "name": "LOGGER",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "type": "Logger"
+            },
+            {
+              "name": "repository",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "type": "OrganizationRepository"
+            },
+            {
+              "name": "employeeClient",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "type": "EmployeeClient"
+            }
+          ],
+          "methods": [
+            {
+              "name": "findByIdWithDepartments",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/{id}/with-departments"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/{?}/with-departments",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findByIdWithDepartmentsAndEmployees",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/{id}/with-departments-and-employees"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/{?}/with-departments-and-employees",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [],
+              "returnType": "List<Organization>",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "PostMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organization",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "type": "Organization",
+                  "annotations": [
+                    {
+                      "name": "RequestBody",
+                      "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/",
+              "httpMethod": "POST"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/{id}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/{?}",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findByIdWithEmployees",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "attributes": {
+                    "default": "/{id}/with-employees"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController",
+              "url": "/{?}/with-employees",
+              "httpMethod": "GET"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "add",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization add: {}\",organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "add",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "organization",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "findAll",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization find\"",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "findAll",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "findById",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization find: id={}\",id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "findById",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByIdWithDepartments",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization with departments find: id={}\",id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "findByIdWithDepartments",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "setDepartments",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithDepartments",
+              "objectType": "Organization",
+              "parameterContents": "departmentClient.findByOrganization(organization.getId())",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "departmentClient",
+              "calledFrom": "findByIdWithDepartments",
+              "objectType": "DepartmentClient",
+              "parameterContents": "organization.getId()",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "getId",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithDepartments",
+              "objectType": "Organization",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByIdWithDepartmentsAndEmployees",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization with departments and employees find: id={}\",id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "findByIdWithDepartmentsAndEmployees",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "setDepartments",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithDepartmentsAndEmployees",
+              "objectType": "Organization",
+              "parameterContents": "departmentClient.findByOrganizationWithEmployees(organization.getId())",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findByOrganizationWithEmployees",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "departmentClient",
+              "calledFrom": "findByIdWithDepartmentsAndEmployees",
+              "objectType": "DepartmentClient",
+              "parameterContents": "organization.getId()",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "getId",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithDepartmentsAndEmployees",
+              "objectType": "Organization",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByIdWithEmployees",
+              "objectType": "Logger",
+              "parameterContents": "\"Organization with employees find: id={}\",id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "repository",
+              "calledFrom": "findByIdWithEmployees",
+              "objectType": "OrganizationRepository",
+              "parameterContents": "id",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "setEmployees",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithEmployees",
+              "objectType": "Organization",
+              "parameterContents": "employeeClient.findByOrganization(organization.getId())",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "employeeClient",
+              "calledFrom": "findByIdWithEmployees",
+              "objectType": "EmployeeClient",
+              "parameterContents": "organization.getId()",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            },
+            {
+              "name": "getId",
+              "packageAndClassName": "pl.piomin.services.organization.controller.OrganizationController",
+              "objectName": "organization",
+              "calledFrom": "findByIdWithEmployees",
+              "objectType": "Organization",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "OrganizationController"
+            }
+          ],
+          "implementedTypes": []
+        }
+      ],
+      "entities": [],
+      "feignClients": [
+        {
+          "name": "EmployeeClient",
+          "path": "/organization-service/src/main/java/pl/piomin/services/organization/client/EmployeeClient.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.organization.client",
+          "classRole": "FEIGN_CLIENT",
+          "annotations": [
+            {
+              "name": "FeignClient",
+              "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+              "attributes": {
+                "name": "employee-service"
+              }
+            }
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+                  "attributes": {
+                    "default": "/organization/{organizationId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Employee>",
+              "microserviceName": "organization-service",
+              "className": "EmployeeClient"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "exchange",
+              "packageAndClassName": "pl.piomin.services.organization.client.EmployeeClient",
+              "objectName": "restCallTemplate",
+              "calledFrom": "findByOrganization",
+              "objectType": "RestCallTemplate",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "EmployeeClient",
+              "url": "/organization/{?}",
+              "httpMethod": "GET"
+            }
+          ],
+          "implementedTypes": []
+        },
+        {
+          "name": "DepartmentClient",
+          "path": "/organization-service/src/main/java/pl/piomin/services/organization/client/DepartmentClient.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.organization.client",
+          "classRole": "FEIGN_CLIENT",
+          "annotations": [
+            {
+              "name": "FeignClient",
+              "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+              "attributes": {
+                "name": "department-service"
+              }
+            }
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "name": "findByOrganizationWithEmployees",
+              "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                  "attributes": {
+                    "default": "/organization/{organizationId}/with-employees"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Department>",
+              "microserviceName": "organization-service",
+              "className": "DepartmentClient"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                  "attributes": {
+                    "default": "/organization/{organizationId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Department>",
+              "microserviceName": "organization-service",
+              "className": "DepartmentClient"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "exchange",
+              "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+              "objectName": "restCallTemplate",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "RestCallTemplate",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "DepartmentClient",
+              "url": "/organization/{?}/with-employees",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "exchange",
+              "packageAndClassName": "pl.piomin.services.organization.client.DepartmentClient",
+              "objectName": "restCallTemplate",
+              "calledFrom": "findByOrganization",
+              "objectType": "RestCallTemplate",
+              "parameterContents": "",
+              "microserviceName": "organization-service",
+              "className": "DepartmentClient",
+              "url": "/organization/{?}",
+              "httpMethod": "GET"
+            }
+          ],
+          "implementedTypes": []
+        }
+      ],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "pom.xml",
+          "path": "/organization-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "build": {
+                "plugins": {
+                  "plugin": [
+                    {
+                      "groupId": "org.springframework.boot",
+                      "artifactId": "spring-boot-maven-plugin"
+                    },
+                    {
+                      "executions": {
+                        "execution": [
+                          {
+                            "goals": {
+                              "goal": "prepare-agent"
+                            }
+                          },
+                          {
+                            "phase": "test",
+                            "id": "report",
+                            "goals": {
+                              "goal": "report"
+                            }
+                          }
+                        ]
+                      },
+                      "groupId": "org.jacoco",
+                      "artifactId": "jacoco-maven-plugin",
+                      "version": "0.8.14"
+                    }
+                  ]
+                }
+              },
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "goals": {
+                              "goal": "build-image"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "image": {
+                            "name": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "org.springframework.boot",
+                        "artifactId": "spring-boot-maven-plugin"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "organization-service",
+              "version": "1.3-SNAPSHOT",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": [
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-netflix-eureka-client"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-config"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-openfeign"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-openfeign-core"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-web"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-actuator"
+                  },
+                  {
+                    "groupId": "io.micrometer",
+                    "artifactId": "micrometer-tracing-bridge-otel"
+                  },
+                  {
+                    "groupId": "org.springdoc",
+                    "artifactId": "springdoc-openapi-starter-webmvc-ui",
+                    "version": "${spring-openai-mvc.version}"
+                  },
+                  {
+                    "groupId": "io.opentelemetry",
+                    "artifactId": "opentelemetry-exporter-zipkin"
+                  },
+                  {
+                    "groupId": "io.github.openfeign",
+                    "artifactId": "feign-micrometer"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-resttestclient"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "scope": "test",
+                    "artifactId": "spring-boot-starter-test"
+                  },
+                  {
+                    "groupId": "org.instancio",
+                    "scope": "test",
+                    "artifactId": "instancio-junit",
+                    "version": "5.5.1"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gateway-service",
+      "path": "/gateway-service",
+      "controllers": [],
+      "entities": [],
+      "feignClients": [],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "pom.xml",
+          "path": "/gateway-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "build": {
+                "plugins": {
+                  "plugin": {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-maven-plugin"
+                  }
+                }
+              },
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "goals": {
+                              "goal": "build-image"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "image": {
+                            "name": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "org.springframework.boot",
+                        "artifactId": "spring-boot-maven-plugin"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "gateway-service",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": [
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-gateway-server-webflux"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-actuator"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-netflix-eureka-client"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-config"
+                  },
+                  {
+                    "groupId": "io.micrometer",
+                    "artifactId": "micrometer-tracing-bridge-otel"
+                  },
+                  {
+                    "groupId": "io.opentelemetry",
+                    "artifactId": "opentelemetry-exporter-zipkin"
+                  },
+                  {
+                    "groupId": "org.springdoc",
+                    "artifactId": "springdoc-openapi-starter-webflux-ui",
+                    "version": "${spring-openai-flux.version}"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "scope": "test",
+                    "artifactId": "spring-boot-starter-test"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "application.yml",
+          "path": "/gateway-service/src/test/resources/application.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "spring": {
+              "application": {
+                "name": "gateway-service"
+              },
+              "config": {
+                "import": "optional:configserver:http://localhost:8088"
+              },
+              "cloud": {
+                "gateway": {
+                  "discovery": {
+                    "locator": {
+                      "enabled": true
+                    }
+                  },
+                  "routes": [
+                    {
+                      "id": "employee-service",
+                      "uri": "lb://employee-service",
+                      "predicates": [
+                        "Path=/employee/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/employee/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "department-service",
+                      "uri": "lb://department-service",
+                      "predicates": [
+                        "Path=/department/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/department/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "organization-service",
+                      "uri": "lb://organization-service",
+                      "predicates": [
+                        "Path=/organization/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/organization/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "openapi",
+                      "uri": "http://localhost:${server.port}",
+                      "predicates": [
+                        "Path=/v3/api-docs/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/v3/api-docs/(?<path>.*), /$\\{path}/v3/api-docs"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "server": {
+              "port": 8060,
+              "forward-headers-strategy": "framework"
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              }
+            },
+            "springdoc": {
+              "cache": {
+                "disabled": true
+              },
+              "version": "@springdoc.version@",
+              "swagger-ui": {
+                "use-root-path": true
+              },
+              "api-docs": {
+                "version": "openapi_3_1"
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "department-service",
+      "path": "/department-service",
+      "controllers": [
+        {
+          "name": "DepartmentController",
+          "path": "/department-service/src/main/java/pl/piomin/services/department/controller/DepartmentController.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.department.controller",
+          "classRole": "CONTROLLER",
+          "annotations": [
+            {
+              "name": "RestController",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "attributes": {}
+            }
+          ],
+          "fields": [
+            {
+              "name": "repository",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "type": "DepartmentRepository"
+            },
+            {
+              "name": "LOGGER",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "type": "Logger"
+            },
+            {
+              "name": "employeeClient",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "type": "EmployeeClient"
+            }
+          ],
+          "methods": [
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [],
+              "returnType": "List<Department>",
+              "microserviceName": "department-service",
+              "className": "DepartmentController",
+              "url": "/",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findByOrganizationWithEmployees",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "attributes": {
+                    "default": "/organization/{organizationId}/with-employees"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Department>",
+              "microserviceName": "department-service",
+              "className": "DepartmentController",
+              "url": "/organization/{?}/with-employees",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "annotations": [
+                {
+                  "name": "PostMapping",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "department",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "type": "Department",
+                  "annotations": [
+                    {
+                      "name": "RequestBody",
+                      "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Department",
+              "microserviceName": "department-service",
+              "className": "DepartmentController",
+              "url": "/",
+              "httpMethod": "POST"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "attributes": {
+                    "default": "/organization/{organizationId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Department>",
+              "microserviceName": "department-service",
+              "className": "DepartmentController",
+              "url": "/organization/{?}",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "attributes": {
+                    "default": "/{id}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Department",
+              "microserviceName": "department-service",
+              "className": "DepartmentController",
+              "url": "/{?}",
+              "httpMethod": "GET"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "LOGGER",
+              "calledFrom": "add",
+              "objectType": "Logger",
+              "parameterContents": "\"Department add: {}\",department",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "repository",
+              "calledFrom": "add",
+              "objectType": "DepartmentRepository",
+              "parameterContents": "department",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "LOGGER",
+              "calledFrom": "findById",
+              "objectType": "Logger",
+              "parameterContents": "\"Department find: id={}\",id",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "repository",
+              "calledFrom": "findById",
+              "objectType": "DepartmentRepository",
+              "parameterContents": "id",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "LOGGER",
+              "calledFrom": "findAll",
+              "objectType": "Logger",
+              "parameterContents": "\"Department find\"",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "repository",
+              "calledFrom": "findAll",
+              "objectType": "DepartmentRepository",
+              "parameterContents": "",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByOrganization",
+              "objectType": "Logger",
+              "parameterContents": "\"Department find: organizationId={}\",organizationId",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "repository",
+              "calledFrom": "findByOrganization",
+              "objectType": "DepartmentRepository",
+              "parameterContents": "organizationId",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "Logger",
+              "parameterContents": "\"Department find with employees: organizationId={}\",organizationId",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "repository",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "DepartmentRepository",
+              "parameterContents": "organizationId",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "forEach",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "departments",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "Department",
+              "parameterContents": "d -> d.setEmployees(employeeClient.findByDepartment(d.getId()))",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "setEmployees",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "d",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "",
+              "parameterContents": "employeeClient.findByDepartment(d.getId())",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "findByDepartment",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "employeeClient",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "EmployeeClient",
+              "parameterContents": "d.getId()",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            },
+            {
+              "name": "getId",
+              "packageAndClassName": "pl.piomin.services.department.controller.DepartmentController",
+              "objectName": "d",
+              "calledFrom": "findByOrganizationWithEmployees",
+              "objectType": "",
+              "parameterContents": "",
+              "microserviceName": "department-service",
+              "className": "DepartmentController"
+            }
+          ],
+          "implementedTypes": []
+        }
+      ],
+      "entities": [],
+      "feignClients": [
+        {
+          "name": "EmployeeClient",
+          "path": "/department-service/src/main/java/pl/piomin/services/department/client/EmployeeClient.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.department.client",
+          "classRole": "FEIGN_CLIENT",
+          "annotations": [
+            {
+              "name": "FeignClient",
+              "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+              "attributes": {
+                "name": "employee-service"
+              }
+            }
+          ],
+          "fields": [],
+          "methods": [
+            {
+              "name": "findByDepartment",
+              "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+                  "attributes": {
+                    "default": "/department/{departmentId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "departmentId",
+                  "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+                      "attributes": {
+                        "default": "departmentId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Employee>",
+              "microserviceName": "department-service",
+              "className": "EmployeeClient"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "exchange",
+              "packageAndClassName": "pl.piomin.services.department.client.EmployeeClient",
+              "objectName": "restCallTemplate",
+              "calledFrom": "findByDepartment",
+              "objectType": "RestCallTemplate",
+              "parameterContents": "",
+              "microserviceName": "department-service",
+              "className": "EmployeeClient",
+              "url": "/department/{?}",
+              "httpMethod": "GET"
+            }
+          ],
+          "implementedTypes": []
+        }
+      ],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "pom.xml",
+          "path": "/department-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "dependencyManagement": {
+                "dependencies": {
+                  "dependency": {
+                    "groupId": "org.springframework.cloud",
+                    "scope": "import",
+                    "artifactId": "spring-cloud-dependencies",
+                    "type": "pom",
+                    "version": "${spring-cloud.version}"
+                  }
+                }
+              },
+              "build": {
+                "plugins": {
+                  "plugin": [
+                    {
+                      "groupId": "org.springframework.boot",
+                      "artifactId": "spring-boot-maven-plugin"
+                    },
+                    {
+                      "executions": {
+                        "execution": [
+                          {
+                            "goals": {
+                              "goal": "prepare-agent"
+                            }
+                          },
+                          {
+                            "phase": "test",
+                            "id": "report",
+                            "goals": {
+                              "goal": "report"
+                            }
+                          }
+                        ]
+                      },
+                      "groupId": "org.jacoco",
+                      "artifactId": "jacoco-maven-plugin",
+                      "version": "0.8.14"
+                    }
+                  ]
+                }
+              },
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "goals": {
+                              "goal": "build-image"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "image": {
+                            "name": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "org.springframework.boot",
+                        "artifactId": "spring-boot-maven-plugin"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "department-service",
+              "version": "1.3-SNAPSHOT",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": [
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-netflix-eureka-client"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-config"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-openfeign"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-openfeign-core"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-web"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-actuator"
+                  },
+                  {
+                    "groupId": "io.micrometer",
+                    "artifactId": "micrometer-tracing-bridge-otel"
+                  },
+                  {
+                    "groupId": "io.opentelemetry",
+                    "artifactId": "opentelemetry-exporter-zipkin"
+                  },
+                  {
+                    "groupId": "io.github.openfeign",
+                    "artifactId": "feign-micrometer"
+                  },
+                  {
+                    "groupId": "org.springdoc",
+                    "artifactId": "springdoc-openapi-starter-webmvc-ui",
+                    "version": "${spring-openai-mvc.version}"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "scope": "test",
+                    "artifactId": "spring-boot-starter-test"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-resttestclient"
+                  },
+                  {
+                    "groupId": "org.instancio",
+                    "scope": "test",
+                    "artifactId": "instancio-junit",
+                    "version": "5.5.1"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "employee-service",
+      "path": "/employee-service",
+      "controllers": [
+        {
+          "name": "EmployeeController",
+          "path": "/employee-service/src/main/java/pl/piomin/services/employee/controller/EmployeeController.java",
+          "fileType": "JCLASS",
+          "packageName": "pl.piomin.services.employee.controller",
+          "classRole": "CONTROLLER",
+          "annotations": [
+            {
+              "name": "RestController",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "attributes": {}
+            }
+          ],
+          "fields": [
+            {
+              "name": "LOGGER",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "type": "Logger"
+            },
+            {
+              "name": "repository",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "type": "EmployeeRepository"
+            }
+          ],
+          "methods": [
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "attributes": {
+                    "default": "/organization/{organizationId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "organizationId",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                      "attributes": {
+                        "default": "organizationId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Employee>",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController",
+              "url": "/organization/{?}",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "attributes": {
+                    "default": "/{id}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "id",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                      "attributes": {
+                        "default": "id"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Employee",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController",
+              "url": "/{?}",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findByDepartment",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "attributes": {
+                    "default": "/department/{departmentId}"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "departmentId",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "type": "Long",
+                  "annotations": [
+                    {
+                      "name": "PathVariable",
+                      "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                      "attributes": {
+                        "default": "departmentId"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "returnType": "List<Employee>",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController",
+              "url": "/department/{?}",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "annotations": [
+                {
+                  "name": "GetMapping",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [],
+              "returnType": "List<Employee>",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController",
+              "url": "/",
+              "httpMethod": "GET"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "annotations": [
+                {
+                  "name": "PostMapping",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "attributes": {
+                    "default": "/"
+                  }
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "employee",
+                  "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                  "type": "Employee",
+                  "annotations": [
+                    {
+                      "name": "RequestBody",
+                      "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "returnType": "Employee",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController",
+              "url": "/",
+              "httpMethod": "POST"
+            }
+          ],
+          "methodCalls": [
+            {
+              "name": "debug",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "add",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee add request received\",kv(\"organizationId\", employee.getOrganizationId()),kv(\"departmentId\", employee.getDepartmentId())",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"organizationId\",employee.getOrganizationId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getOrganizationId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employee",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"departmentId\",employee.getDepartmentId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getDepartmentId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employee",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "add",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "repository",
+              "calledFrom": "add",
+              "objectType": "EmployeeRepository",
+              "parameterContents": "employee",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "add",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee added\",kv(\"employeeId\", saved.getId()),kv(\"organizationId\", saved.getOrganizationId()),kv(\"departmentId\", saved.getDepartmentId())",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"employeeId\",saved.getId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "saved",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"organizationId\",saved.getOrganizationId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getOrganizationId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "saved",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"departmentId\",saved.getDepartmentId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getDepartmentId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "saved",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "error",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "add",
+              "objectType": "Logger",
+              "parameterContents": "\"Failed to add employee\",kv(\"errorCode\", ErrorCode.INTERNAL_ERROR.getCode()),kv(\"organizationId\", employee.getOrganizationId()),e",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"errorCode\",ErrorCode.INTERNAL_ERROR.getCode()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getCode",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "INTERNAL_ERROR",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "add",
+              "objectType": "",
+              "parameterContents": "\"organizationId\",employee.getOrganizationId()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getOrganizationId",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employee",
+              "calledFrom": "add",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "debug",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findById",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee findById request received\",kv(\"employeeId\", id)",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findById",
+              "objectType": "",
+              "parameterContents": "\"employeeId\",id",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "findById",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "repository",
+              "calledFrom": "findById",
+              "objectType": "EmployeeRepository",
+              "parameterContents": "id",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findById",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee found\",kv(\"employeeId\", id)",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findById",
+              "objectType": "",
+              "parameterContents": "\"employeeId\",id",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "error",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findById",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee not found\",kv(\"errorCode\", ErrorCode.EMPLOYEE_NOT_FOUND.getCode()),kv(\"employeeId\", id),e",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findById",
+              "objectType": "",
+              "parameterContents": "\"errorCode\",ErrorCode.EMPLOYEE_NOT_FOUND.getCode()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "getCode",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findById",
+              "objectType": "EMPLOYEE_NOT_FOUND",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findById",
+              "objectType": "",
+              "parameterContents": "\"employeeId\",id",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "debug",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findAll",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee findAll request received\"",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "findAll",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "repository",
+              "calledFrom": "findAll",
+              "objectType": "EmployeeRepository",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findAll",
+              "objectType": "Logger",
+              "parameterContents": "\"Employees fetched\",kv(\"count\", employees.size())",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findAll",
+              "objectType": "",
+              "parameterContents": "\"count\",employees.size()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "size",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employees",
+              "calledFrom": "findAll",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "debug",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByDepartment",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee findByDepartment request received\",kv(\"departmentId\", departmentId)",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByDepartment",
+              "objectType": "",
+              "parameterContents": "\"departmentId\",departmentId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "findByDepartment",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "repository",
+              "calledFrom": "findByDepartment",
+              "objectType": "EmployeeRepository",
+              "parameterContents": "departmentId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByDepartment",
+              "objectType": "Logger",
+              "parameterContents": "\"Employees fetched by department\",kv(\"departmentId\", departmentId),kv(\"count\", employees.size())",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByDepartment",
+              "objectType": "",
+              "parameterContents": "\"departmentId\",departmentId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByDepartment",
+              "objectType": "",
+              "parameterContents": "\"count\",employees.size()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "size",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employees",
+              "calledFrom": "findByDepartment",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "debug",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByOrganization",
+              "objectType": "Logger",
+              "parameterContents": "\"Employee findByOrganization request received\",kv(\"organizationId\", organizationId)",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByOrganization",
+              "objectType": "",
+              "parameterContents": "\"organizationId\",organizationId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "findByOrganization",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "repository",
+              "calledFrom": "findByOrganization",
+              "objectType": "EmployeeRepository",
+              "parameterContents": "organizationId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "info",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "LOGGER",
+              "calledFrom": "findByOrganization",
+              "objectType": "Logger",
+              "parameterContents": "\"Employees fetched by organization\",kv(\"organizationId\", organizationId),kv(\"count\", employees.size())",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByOrganization",
+              "objectType": "",
+              "parameterContents": "\"organizationId\",organizationId",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "kv",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "",
+              "calledFrom": "findByOrganization",
+              "objectType": "",
+              "parameterContents": "\"count\",employees.size()",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            },
+            {
+              "name": "size",
+              "packageAndClassName": "pl.piomin.services.employee.controller.EmployeeController",
+              "objectName": "employees",
+              "calledFrom": "findByOrganization",
+              "objectType": "Employee",
+              "parameterContents": "",
+              "microserviceName": "employee-service",
+              "className": "EmployeeController"
+            }
+          ],
+          "implementedTypes": []
+        }
+      ],
+      "entities": [],
+      "feignClients": [],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "pom.xml",
+          "path": "/employee-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "dependencyManagement": {
+                "dependencies": {
+                  "dependency": {
+                    "groupId": "org.springframework.cloud",
+                    "scope": "import",
+                    "artifactId": "spring-cloud-dependencies",
+                    "type": "pom",
+                    "version": "${spring-cloud.version}"
+                  }
+                }
+              },
+              "build": {
+                "plugins": {
+                  "plugin": [
+                    {
+                      "groupId": "org.springframework.boot",
+                      "artifactId": "spring-boot-maven-plugin"
+                    },
+                    {
+                      "executions": {
+                        "execution": [
+                          {
+                            "goals": {
+                              "goal": "prepare-agent"
+                            }
+                          },
+                          {
+                            "phase": "test",
+                            "id": "report",
+                            "goals": {
+                              "goal": "report"
+                            }
+                          }
+                        ]
+                      },
+                      "groupId": "org.jacoco",
+                      "artifactId": "jacoco-maven-plugin",
+                      "version": "0.8.14"
+                    }
+                  ]
+                }
+              },
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "goals": {
+                              "goal": "build-image"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "image": {
+                            "name": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "org.springframework.boot",
+                        "artifactId": "spring-boot-maven-plugin"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "employee-service",
+              "version": "1.3-SNAPSHOT",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": [
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-netflix-eureka-client"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-config"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-web"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-starter-actuator"
+                  },
+                  {
+                    "groupId": "io.micrometer",
+                    "artifactId": "micrometer-tracing-bridge-otel"
+                  },
+                  {
+                    "groupId": "io.opentelemetry",
+                    "artifactId": "opentelemetry-exporter-zipkin"
+                  },
+                  {
+                    "groupId": "io.github.openfeign",
+                    "artifactId": "feign-micrometer"
+                  },
+                  {
+                    "groupId": "org.springdoc",
+                    "artifactId": "springdoc-openapi-starter-webmvc-ui",
+                    "version": "${spring-openai-mvc.version}"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "scope": "test",
+                    "artifactId": "spring-boot-starter-test"
+                  },
+                  {
+                    "groupId": "org.springframework.boot",
+                    "scope": "test",
+                    "artifactId": "spring-boot-resttestclient"
+                  },
+                  {
+                    "groupId": "org.instancio",
+                    "scope": "test",
+                    "artifactId": "instancio-junit",
+                    "version": "5.5.1"
+                  },
+                  {
+                    "groupId": "net.logstash.logback",
+                    "artifactId": "logstash-logback-encoder",
+                    "version": 7.4
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "config-service",
+      "path": "/config-service",
+      "controllers": [],
+      "entities": [],
+      "feignClients": [],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "gateway-service.yml",
+          "path": "/config-service/src/main/resources/config/gateway-service.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8060,
+              "forward-headers-strategy": "framework"
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr([%X{traceId:-},%X{spanId:-}]){cyan} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              },
+              "cloud": {
+                "gateway": {
+                  "discovery": {
+                    "locator": {
+                      "enabled": true
+                    }
+                  },
+                  "routes": [
+                    {
+                      "id": "employee-service",
+                      "uri": "lb://employee-service",
+                      "predicates": [
+                        "Path=/employee/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/employee/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "department-service",
+                      "uri": "lb://department-service",
+                      "predicates": [
+                        "Path=/department/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/department/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "organization-service",
+                      "uri": "lb://organization-service",
+                      "predicates": [
+                        "Path=/organization/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/organization/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "openapi",
+                      "uri": "http://localhost:${server.port}",
+                      "predicates": [
+                        "Path=/v3/api-docs/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/v3/api-docs/(?<path>.*), /$\\{path}/v3/api-docs"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "springdoc": {
+              "cache": {
+                "disabled": true
+              },
+              "version": "@springdoc.version@",
+              "swagger-ui": {
+                "use-root-path": true
+              },
+              "api-docs": {
+                "version": "openapi_3_1"
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "discovery-service.yml",
+          "path": "/config-service/src/main/resources/config/discovery-service.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8061
+            },
+            "eureka": {
+              "instance": {
+                "hostname": "localhost"
+              },
+              "client": {
+                "registerWithEureka": false,
+                "fetchRegistry": false,
+                "serviceUrl": {
+                  "defaultZone": "http://${eureka.instance.hostname}:${server.port}/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "department-service-docker.yml",
+          "path": "/config-service/src/main/resources/config/department-service-docker.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8080
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://discovery-service:8061/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.department"
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "zipkin": {
+                "tracing": {
+                  "endpoint": "http://zipkin:9411/api/v2/spans"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "pom.xml",
+          "path": "/config-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "build": {
+                "plugins": {
+                  "plugin": {
+                    "groupId": "org.springframework.boot",
+                    "artifactId": "spring-boot-maven-plugin"
+                  }
+                }
+              },
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "phase": "package",
+                            "goals": {
+                              "goal": "dockerBuild"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "from": {
+                            "image": "eclipse-temurin:25-jdk"
+                          },
+                          "to": {
+                            "image": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "com.google.cloud.tools",
+                        "artifactId": "jib-maven-plugin",
+                        "version": "3.5.1"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "config-service",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": {
+                  "groupId": "org.springframework.cloud",
+                  "artifactId": "spring-cloud-config-server"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "employee-service-instance2.yml",
+          "path": "/config-service/src/main/resources/config/employee-service-instance2.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 9090
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "endpoints": {
+                "web": {
+                  "exposure": {
+                    "include": "health,sbom"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "application.yml",
+          "path": "/config-service/src/main/resources/application.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8088
+            },
+            "spring": {
+              "profiles": {
+                "active": "native"
+              },
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            }
+          }
+        },
+        {
+          "name": "department-service.yml",
+          "path": "/config-service/src/main/resources/config/department-service.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 0,
+              "forward-headers-strategy": "framework"
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              },
+              "instance": {
+                "instanceId": "${spring.application.name}:${spring.application.instance_id:${random.value}}"
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr([%X{traceId:-},%X{spanId:-}]){cyan} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.department",
+              "cache": {
+                "disabled": true
+              },
+              "version": "@springdoc.version@",
+              "api-docs": {
+                "version": "openapi_3_1"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "gateway-service-docker.yml",
+          "path": "/config-service/src/main/resources/config/gateway-service-docker.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8060
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://discovery-service:8061/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              },
+              "cloud": {
+                "gateway": {
+                  "discovery": {
+                    "locator": {
+                      "enabled": true
+                    }
+                  },
+                  "routes": [
+                    {
+                      "id": "employee-service",
+                      "uri": "lb://employee-service",
+                      "predicates": [
+                        "Path=/employee/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/employee/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "department-service",
+                      "uri": "lb://department-service",
+                      "predicates": [
+                        "Path=/department/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/department/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "organization-service",
+                      "uri": "lb://organization-service",
+                      "predicates": [
+                        "Path=/organization/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/organization/(?<path>.*), /$\\{path}"
+                      ]
+                    },
+                    {
+                      "id": "openapi",
+                      "uri": "http://localhost:${server.port}",
+                      "predicates": [
+                        "Path=/v3/api-docs/**"
+                      ],
+                      "filters": [
+                        "RewritePath=/v3/api-docs/(?<path>.*), /$\\{path}/v3/api-docs"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "springdoc": {
+              "swagger-ui": {
+                "urls": [
+                  {
+                    "name": "employee",
+                    "url": "/v3/api-docs/employee"
+                  },
+                  {
+                    "name": "department",
+                    "url": "/v3/api-docs/department"
+                  },
+                  {
+                    "name": "organization",
+                    "url": "/v3/api-docs/organization"
+                  }
+                ]
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "zipkin": {
+                "tracing": {
+                  "endpoint": "http://zipkin:9411/api/v2/spans"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "organization-service.yml",
+          "path": "/config-service/src/main/resources/config/organization-service.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 0,
+              "forward-headers-strategy": "framework"
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              },
+              "instance": {
+                "instanceId": "${spring.application.name}:${spring.application.instance_id:${random.value}}"
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr([%X{traceId:-},%X{spanId:-}]){cyan} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.organization",
+              "cache": {
+                "disabled": true
+              },
+              "version": "@springdoc.version@",
+              "api-docs": {
+                "version": "openapi_3_1"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "employee-service.yml",
+          "path": "/config-service/src/main/resources/config/employee-service.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 0,
+              "forward-headers-strategy": "framework"
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://localhost:8061/eureka/"
+                }
+              },
+              "instance": {
+                "instanceId": "${spring.application.name}:${spring.application.instance_id:${random.value}}"
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr([%X{traceId:-},%X{spanId:-}]){cyan} %clr(${LOG_LEVEL_PATTERN:-%5p}) %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.employee",
+              "cache": {
+                "disabled": true
+              },
+              "version": "@springdoc.version@",
+              "api-docs": {
+                "version": "openapi_3_1"
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "endpoints": {
+                "web": {
+                  "exposure": {
+                    "include": "health,sbom"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "discovery-service-docker.yml",
+          "path": "/config-service/src/main/resources/config/discovery-service-docker.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8061
+            },
+            "eureka": {
+              "instance": {
+                "hostname": "localhost"
+              },
+              "client": {
+                "registerWithEureka": false,
+                "fetchRegistry": false,
+                "serviceUrl": {
+                  "defaultZone": "http://${eureka.instance.hostname}:${server.port}/eureka/"
+                }
+              }
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "employee-service-docker.yml",
+          "path": "/config-service/src/main/resources/config/employee-service-docker.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8080
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://discovery-service:8061/eureka/"
+                }
+              },
+              "instance": {
+                "hostname": "employee-service"
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.employee"
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "zipkin": {
+                "tracing": {
+                  "endpoint": "http://zipkin:9411/api/v2/spans"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "organization-service-docker.yml",
+          "path": "/config-service/src/main/resources/config/organization-service-docker.yml",
+          "fileType": "CONFIG",
+          "data": {
+            "server": {
+              "port": 8080
+            },
+            "eureka": {
+              "client": {
+                "serviceUrl": {
+                  "defaultZone": "http://discovery-service:8061/eureka/"
+                }
+              }
+            },
+            "logging": {
+              "pattern": {
+                "console": "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              }
+            },
+            "springdoc": {
+              "packagesToScan": "pl.piomin.services.organization"
+            },
+            "spring": {
+              "output": {
+                "ansi": {
+                  "enabled": "always"
+                }
+              }
+            },
+            "management": {
+              "tracing": {
+                "sampling": {
+                  "probability": 1.0
+                }
+              },
+              "zipkin": {
+                "tracing": {
+                  "endpoint": "http://zipkin:9411/api/v2/spans"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "discovery-service",
+      "path": "/discovery-service",
+      "controllers": [],
+      "entities": [],
+      "feignClients": [],
+      "services": [],
+      "repositories": [],
+      "files": [
+        {
+          "name": "pom.xml",
+          "path": "/discovery-service/pom.xml",
+          "fileType": "CONFIG",
+          "data": {
+            "project": {
+              "parent": {
+                "groupId": "pl.piomin.services",
+                "artifactId": "sample-spring-microservices-new",
+                "version": "1.2-SNAPSHOT"
+              },
+              "xmlns": "http://maven.apache.org/POM/4.0.0",
+              "modelVersion": "4.0.0",
+              "xsi:schemaLocation": "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "profiles": {
+                "profile": {
+                  "build": {
+                    "plugins": {
+                      "plugin": {
+                        "executions": {
+                          "execution": {
+                            "phase": "package",
+                            "goals": {
+                              "goal": "dockerBuild"
+                            }
+                          }
+                        },
+                        "configuration": {
+                          "from": {
+                            "image": "eclipse-temurin:25-jdk"
+                          },
+                          "to": {
+                            "image": "piomin/${project.artifactId}:${project.version}"
+                          }
+                        },
+                        "groupId": "com.google.cloud.tools",
+                        "artifactId": "jib-maven-plugin",
+                        "version": "3.5.1"
+                      }
+                    }
+                  },
+                  "id": "build-image"
+                }
+              },
+              "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+              "artifactId": "discovery-service",
+              "properties": {
+                "sonar.moduleKey": "${project.artifactId}"
+              },
+              "dependencies": {
+                "dependency": [
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-netflix-eureka-server"
+                  },
+                  {
+                    "groupId": "org.springframework.cloud",
+                    "artifactId": "spring-cloud-starter-config"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "orphans": []
+}
