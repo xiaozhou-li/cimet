@@ -7,6 +7,7 @@ import edu.university.ecs.lab.common.models.ir.MicroserviceSystem;
 import edu.university.ecs.lab.common.models.sdg.MethodDependencyGraph;
 import edu.university.ecs.lab.common.models.sdg.ServiceDependencyGraph;
 import edu.university.ecs.lab.common.services.GitService;
+import edu.university.ecs.lab.common.services.LoggerManager;
 import edu.university.ecs.lab.common.utils.FileUtils;
 import edu.university.ecs.lab.common.utils.JsonReadWriteUtils;
 import edu.university.ecs.lab.delta.models.SystemChange;
@@ -21,6 +22,10 @@ import edu.university.ecs.lab.detection.metrics.models.StructuralCoupling;
 import edu.university.ecs.lab.detection.metrics.services.MetricResultCalculation;
 import edu.university.ecs.lab.intermediate.create.services.IRExtractionService;
 import edu.university.ecs.lab.intermediate.merge.services.MergeService;
+import edu.university.ecs.lab.organizational.services.OrganizationalAnalysisService;
+import edu.university.ecs.lab.organizational.services.OrganizationalIntegrationContract;
+import edu.university.ecs.lab.organizational.services.OrganizationalIntegrationMode;
+import edu.university.ecs.lab.organizational.services.SystemPropertyOrganizationalIntegrationContract;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -70,6 +75,7 @@ public class DetectionService {
     private ARDetectionService arDetectionService;
     private DeltaExtractionService deltaExtractionService;
     private MergeService mergeService;
+    private final OrganizationalIntegrationContract organizationalIntegrationContract;
     private final XSSFWorkbook workbook;
     private XSSFSheet sheet;
 //    private final String firstCommitID
@@ -86,6 +92,7 @@ public class DetectionService {
         FileUtils.makeDirs();
         // Setup local repo
         gitService = new GitService(configPath);
+        organizationalIntegrationContract = new SystemPropertyOrganizationalIntegrationContract();
         workbook = new XSSFWorkbook();
 
         BASE_DELTA_PATH = "./output/" + config.getRepoName() + BASE_DELTA_PATH;
@@ -199,6 +206,24 @@ public class DetectionService {
 
         }
 
+        invokeOrganizationalIntegrationStub();
+
+    }
+
+    /**
+     * Backward-compatible organizational integration contract invocation.
+     *
+     * <p>Default mode is disabled and therefore preserves legacy behavior. When enabled,
+     * only a stub hook is invoked in M0.</p>
+     */
+    private void invokeOrganizationalIntegrationStub() {
+        OrganizationalIntegrationMode mode = organizationalIntegrationContract.resolveMode();
+        if (mode == OrganizationalIntegrationMode.DISABLED) {
+            return;
+        }
+
+        LoggerManager.info(() -> "Organizational integration mode enabled: " + mode + " (M0 stub)");
+        new OrganizationalAnalysisService().run(mode);
     }
 
     /**
