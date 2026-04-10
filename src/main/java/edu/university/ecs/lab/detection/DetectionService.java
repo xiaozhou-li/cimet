@@ -214,7 +214,7 @@ public class DetectionService {
      * Backward-compatible organizational integration contract invocation.
      *
      * <p>Default mode is disabled and therefore preserves legacy behavior. When enabled,
-     * only a stub hook is invoked in M0.</p>
+     * an additive organizational hook is invoked based on the selected mode.</p>
      */
     private void invokeOrganizationalIntegrationStub() {
         OrganizationalIntegrationMode mode = organizationalIntegrationContract.resolveMode();
@@ -222,7 +222,7 @@ public class DetectionService {
             return;
         }
 
-        LoggerManager.info(() -> "Organizational integration mode enabled: " + mode + " (M0 stub)");
+        LoggerManager.info(() -> "Organizational integration mode enabled: " + mode);
         new OrganizationalAnalysisService().run(mode);
     }
 

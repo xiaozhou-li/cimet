@@ -9,7 +9,8 @@ import java.util.Locale;
  */
 public enum OrganizationalIntegrationMode {
     DISABLED,
-    STUB;
+    STUB,
+    M1_SKELETON;
 
     /**
      * Parses a textual mode value into a known integration mode.
@@ -24,6 +25,13 @@ public enum OrganizationalIntegrationMode {
         }
 
         String normalized = rawMode.trim().toLowerCase(Locale.ROOT);
+        if ("m1".equals(normalized)
+                || "m1-skeleton".equals(normalized)
+                || "skeleton".equals(normalized)
+                || "pipeline".equals(normalized)) {
+            return M1_SKELETON;
+        }
+
         if ("stub".equals(normalized) || "enabled".equals(normalized) || "on".equals(normalized) || "true".equals(normalized)) {
             return STUB;
         }
