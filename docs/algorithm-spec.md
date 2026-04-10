@@ -352,3 +352,207 @@ Let:
 - Emit formula version metadata for all metrics.
 - Preserve compatibility keys required by `docs/example_ir.json`.
 - Prefer additive data model changes over mutation of existing technical IR model.
+
+# Algorithm Specification: CIMET Organizational Metrics (Paper-Faithful)
+
+## Terminology Contract
+
+This document strictly follows definitions from:
+
+* KD+EASE_2026_.pdf
+* SEAA26cohesion.pdf
+
+No proxy or heuristic substitutions are used. All formulas are aligned with the original research.
+
+---
+
+# 1. Contribution Model
+
+For each developer d and service s:
+
+* c_{d,s}: number of contributions (commits or LOC-weighted)
+* C_s = Σ_d c_{d,s}
+
+## Contribution share
+
+w_{d,s} = c_{d,s} / C_s
+
+## Contribution focus
+
+f_{d,s} = c_{d,s} / Σ_{s'} c_{d,s'}
+
+---
+
+# 2. Organizational Cohesion (PTC)
+
+Defined per service s.
+
+Let D_s be the set of developers contributing to s.
+
+If |D_s| < 2:
+
+PTC(s) = 0
+
+Else:
+
+PTC(s) = (1 / |pairs|) * Σ_{i < j} ( sqrt(f_{i,s} * f_{j,s}) * ((w_{i,s} + w_{j,s}) / 2) )
+
+Where:
+
+* pairs = all unordered developer pairs in D_s
+
+Interpretation:
+
+* High when developers are both focused on s and evenly contributing
+
+---
+
+# 3. Organizational Coupling (OC)
+
+Defined for service pair (s_i, s_j).
+
+For each developer d:
+
+OC_d(s_i, s_j) = (2 * w_{d,s_i} * w_{d,s_j}) / (w_{d,s_i} + w_{d,s_j}) * S_d(s_i, s_j)
+
+Where:
+
+* S_d(s_i, s_j): switching degree between services for developer d
+
+Then:
+
+OC(s_i, s_j) = Σ_d OC_d(s_i, s_j)
+
+---
+
+# 4. Normalized Organizational Coupling (NOC)
+
+NOC(s_i, s_j) = OC(s_i, s_j) / OC_max(s_i, s_j)
+
+Where:
+
+* OC_max(s_i, s_j) is computed assuming perfect alternation of contributions between the two services
+
+Notes:
+
+* This is NOT min-max normalization
+* Normalization is analytical, not dataset-dependent
+
+---
+
+# 5. Average Organizational Coupling (AOC)
+
+Defined per service s:
+
+AOC(s) = (1 / (|S| - 1)) * Σ_{t ≠ s} NOC(s, t)
+
+Where:
+
+* S = set of services
+
+---
+
+# 6. Developer Roles (KD+EASE)
+
+## 6.1 Jack (Breadth)
+
+Jack_d = |Files_d| / |ReachableFiles|
+
+Where:
+
+* Files_d: files modified by developer d
+* ReachableFiles: all files reachable via traceability graph
+
+---
+
+## 6.2 Maven (Depth)
+
+Maven_d = |RareFiles_d| / |RareFiles|
+
+Where:
+
+* RareFiles: files rarely modified globally
+
+---
+
+## 6.3 Connector (Brokerage)
+
+Connector_d = BetweennessCentrality(d)
+
+Computed on developer graph where:
+
+* Nodes = developers
+* Edges = shared artifact interaction (files, commits, services)
+
+---
+
+# 7. Role Stacking Index (RSI)
+
+RSI_d = (Jack_d * Maven_d * Connector_d)^(1/3)
+
+Properties:
+
+* Penalizes imbalance
+* Rewards simultaneous strength across roles
+
+---
+
+# 8. Temporal Windowing
+
+All metrics are computed per time window W.
+
+Pipeline:
+
+1. Filter contributions by W
+2. Compute c_{d,s}
+3. Derive w_{d,s}, f_{d,s}
+4. Compute PTC, OC/NOC/AOC
+5. Compute roles and RSI
+
+---
+
+# 9. Traceability Requirements
+
+Required relations:
+
+* developer → commit
+* commit → file
+* file → service
+
+Derived:
+
+* developer → service
+
+---
+
+# 10. Implementation Constraints
+
+* Deterministic ordering required
+* Floating point precision standardized
+* All formulas versioned
+
+---
+
+# 11. Explicit Non-Goals
+
+The following are intentionally NOT used:
+
+* entropy-based PTC
+* min-max normalization for coupling
+* heuristic role scoring
+* statistical RSI variants
+
+---
+
+# 12. Output Requirements
+
+For each window:
+
+* serviceOwnership
+* PTC per service
+* NOC per service pair
+* AOC per service
+* developer roles (Jack/Maven/Connector)
+* RSI per developer
+
+All outputs must include formula version metadata.
